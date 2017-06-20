@@ -1,3 +1,5 @@
+using Microsoft.AspNet.SignalR;
+using Microsoft.AspNet.SignalR.Ninject;
 using TechTest.Interfaces.DatabaseMethods;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(TechTest.App_Start.NinjectWebCommon), "Start")]
@@ -57,6 +59,8 @@ namespace TechTest.App_Start {
             kernel.Bind<ITimingsDatabase>().To<DatabaseMethods.MSSql.TimingsDatabase>().InSingletonScope();
             kernel.Bind<IValueDatabase>().To<DatabaseMethods.MSSql.ValueDatabase>().InSingletonScope()
                 .WithConstructorArgument(kernel.Get<ITimingsDatabase>());
+
+            GlobalHost.DependencyResolver = new NinjectDependencyResolver(kernel);
         }
     }
 }
