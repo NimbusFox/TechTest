@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "IC\Classes\Class
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "IC\Interfaces\Interfaces.csproj", "{80AFA216-0E65-43B4-8749-E4BF0992ED09}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseMethods", "DatabaseMethods", "{F2E8C420-A692-4C1A-9F52-641D0C9C19A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSSqlDatabaseMethods", "DatabaseMethods\MSSqlDatabaseMethods\MSSqlDatabaseMethods.csproj", "{0954316A-301A-47B6-828A-BA9EF10F376D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{80AFA216-0E65-43B4-8749-E4BF0992ED09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80AFA216-0E65-43B4-8749-E4BF0992ED09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80AFA216-0E65-43B4-8749-E4BF0992ED09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0954316A-301A-47B6-828A-BA9EF10F376D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0954316A-301A-47B6-828A-BA9EF10F376D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0954316A-301A-47B6-828A-BA9EF10F376D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0954316A-301A-47B6-828A-BA9EF10F376D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,5 +44,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6C6CAF26-FA60-4A4E-98B2-AB532244D446} = {D40DD07C-080D-49C0-87D1-1B49AC9AB774}
 		{80AFA216-0E65-43B4-8749-E4BF0992ED09} = {D40DD07C-080D-49C0-87D1-1B49AC9AB774}
+		{0954316A-301A-47B6-828A-BA9EF10F376D} = {F2E8C420-A692-4C1A-9F52-641D0C9C19A9}
 	EndGlobalSection
 EndGlobal
