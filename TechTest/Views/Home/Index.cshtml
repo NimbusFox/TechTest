@@ -1,5 +1,11 @@
-﻿@{
+﻿@model string
+@{
     ViewBag.Title = "Home Page";
 }
 
-@Scripts.Render("~/Scripts/Start/Value.js")
+@Scripts.Render("~/Scripts/Start/" + Model + ".js")
+
+@if (Model == "Timings") {
+    <a href="~/Export"><button class="btn btn-success">Export</button></a>
+    <div id="table"></div>
+}

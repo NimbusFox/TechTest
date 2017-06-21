@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace TechTest.Interfaces.DatabaseMethods {
     public interface IValueDatabase {
         int GetTotalCount();
-        int GetPageCount(int perPage);
-        List<int> GetValues(int page, int perPage, bool asc);
+        List<int> GetValues(bool asc);
         void Add(int value);
     }
 }

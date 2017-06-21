@@ -1,14 +1,12 @@
 ﻿interface IGlobal {
-    page: number;
-    perPage: number;
     asc: boolean;
     hub: IHub;
     callTable: Function;
 }
 
 interface IHubServer {
-    Add: Function;
-    GetTable: Function;
+    addValue: Function;
+    getTable: Function;
 }
 
 interface IHubClient {

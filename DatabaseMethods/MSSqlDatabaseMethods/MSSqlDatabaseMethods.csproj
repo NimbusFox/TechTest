@@ -47,6 +47,10 @@
     <Compile Include="ValueDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\IC\Classes\Classes.csproj">
+      <Project>{6C6CAF26-FA60-4A4E-98B2-AB532244D446}</Project>
+      <Name>Classes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\IC\Interfaces\Interfaces.csproj">
       <Project>{80afa216-0e65-43b4-8749-e4bf0992ed09}</Project>
       <Name>Interfaces</Name>

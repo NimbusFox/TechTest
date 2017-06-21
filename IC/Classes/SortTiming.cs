@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TechTest.Classes {
+    [Serializable]
     public class SortTiming {
         public int ValueCount { get; set; }
-        public long Time { get; set; }
+        public double Time { get; set; }
         public string Order { get; set; }
     }
 }

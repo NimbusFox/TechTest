@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TechTest.Interfaces.DatabaseMethods;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Web.Configuration;
 
 namespace TechTest.DatabaseMethods.MSSql {
@@ -38,27 +39,37 @@ namespace TechTest.DatabaseMethods.MSSql {
 
             var reader = cmd.ExecuteReader();
 
+            reader.Read();
+
+            var output = (int) reader[0];
+
             reader.Close();
 
             con.Close();
 
-            return (int) reader.GetValue(0);
+            return output;
         }
 
-        public int GetPageCount(int perPage) {
-            return (int) Math.Ceiling((double) (GetTotalCount() / perPage));
-        }
-
-        public List<int> GetValues(int page, int perPage, bool asc) {
-            var start = page * perPage - perPage;
+        public List<int> GetValues(bool asc) {
+            var watch = new Stopwatch();
 
             var con = Connect();
 
-            var cmd = new SqlCommand("SELECT * FROM [dbo].[ValuesTable] ORDER BY Value " + (asc ? "ASC" : "DESC") + " OFFSET " + start + " ROWS FETCH NEXT " + perPage + " ROWS ONLY", con);
+            var cmd = new SqlCommand("SELECT * FROM [dbo].[ValuesTable] ORDER BY Value " + (asc ? "ASC" : "DESC"), con);
 
             var output = new List<int>();
 
+            watch.Start();
+
             var reader = cmd.ExecuteReader();
+
+            watch.Stop();
+
+            var task = new Task(() => {
+                _timingsDatabase.Add(GetTotalCount(), watch.ElapsedTicks, asc);
+            });
+
+            task.Start();
 
             while (reader.Read()) {
                 output.Add((int)reader[0]);

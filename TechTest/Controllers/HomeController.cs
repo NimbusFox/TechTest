@@ -14,8 +14,8 @@ namespace TechTest.Controllers {
             _valueDatabase = valueDatabase;
         }
 
-        public ActionResult Index() {
-            return View();
+        public ActionResult Index(string id = "Values") {
+            return View(model: id);
         }
     }
 }

@@ -16,8 +16,8 @@ namespace TechTest.Hubs {
             _valueDatabase = valueDatabase;
         }
 
-        public List<int> GetTable(int page, int perPage, bool asc) {
-            return _valueDatabase.GetValues(page, perPage, asc);
+        public List<int> GetTable(bool asc) {
+            return _valueDatabase.GetValues(asc);
         }
 
         public void AddValue(int value) {
